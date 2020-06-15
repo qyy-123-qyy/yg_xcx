@@ -1,0 +1,6 @@
+.address_row .address_btn{
+    padding: 20rpx;
+}
+.address_row .address_btn button{
+   font-weight: 600;
+}

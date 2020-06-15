@@ -1,0 +1,6 @@
+<view class="address_row">
+    <view class="address_btn">
+        <button type="primary" plain bindtap="handelAddress">获取收获地址</button>
+    </view>
+</view>
+

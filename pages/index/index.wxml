@@ -1,0 +1,53 @@
+<view class="pyp_index">
+<!-- 搜索框 -->
+   <searchinput></searchinput>
+<!-- 轮播图开始 -->
+<view class="index_swiper">
+    <!--
+     swiper一开始有默认样式 100%*150px
+     image也有默认样式 320px*240px，mode属性 渲染模式 widthFix
+     设计图片轮播图
+      1 先看原图大小 750*340
+      2 图片高度自适应，宽度100%
+ 
+ -->
+   <swiper autoplay indicator-dots circular>
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+         <navigator>
+             <image src="{{item.image_src}}" mode="widthFix" />           
+         </navigator>     
+      </swiper-item>
+   </swiper>
+</view>
+<!-- 轮播图结束 -->
+
+<!-- 导航开始 -->
+<view class="index_cate">
+  <navigator wx:for="{{tabList}}" wx:key="name">
+    <image mode="widthFix" src="{{item. image_src}}"/>      
+  </navigator>  
+</view> 
+<!-- 导航结束 -->
+
+<!-- 楼层开始 -->
+<view class="index_floor">
+    <view class="floor_group" wx:for="{{floorList}}" wx:for-index="index1" wx:for-item="item1" wx:key="floor_title">
+        <!-- 标题 -->
+        <view class="floor_title">
+            <image src="{{item1.floor_title.image_src}}" mode="widthFix"/>      
+        </view>
+        <!-- 内容 -->
+        <view class="floor_list">
+            <navigator wx:for="{{item1.product_list}}" wx:for-index="index2" wx:for-item="item2" wx:key="name">
+                <image src="{{item2.image_src}}" mode="{{index2==0?'widthFix':'scaleToFill'}}"/>                
+            </navigator>   
+        </view>         
+    </view>     
+</view> 
+<!-- 楼层结束 -->
+
+</view>
+  
+
+
+  
